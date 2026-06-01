@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Yousif & Mallk Wedding</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Montserrat',sans-serif;
+    background:#f8f5f0;
+    color:#2c2c2c;
+    overflow-x:hidden;
+}
+
+h1,h2,h3{
+    font-family:'Playfair Display',serif;
+}
+
+section{
+    padding:100px 10%;
+    position:relative;
+    z-index:2;
+}
+
+/* HERO */
+
+.hero{
+    height:100vh;
+
+    background:
+    linear-gradient(
+        rgba(0,0,0,.45),
+        rgba(0,0,0,.55)
+    ),
+    url("engagement day.jpg");
+
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+    color:white;
+}
+
+.hero-content h1{
+    font-size:4rem;
+
+    text-shadow:
+    0 0 15px rgba(212,175,55,.3),
+    0 0 30px rgba(212,175,55,.15);
+}
+
+.hero-content h2{
+    color:#d4af37;
+    font-size:2rem;
+    margin:15px 0;
+}
+
+.hero-content p{
+    max-width:700px;
+    margin:25px auto;
+    line-height:1.8;
+    font-size:1.2rem;
+}
+
+.hero-date{
+    font-size:1.3rem;
+    letter-spacing:5px;
+    margin-top:20px;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:35px;
+    padding:15px 40px;
+
+    border:2px solid #d4af37;
+
+    color:white;
+    text-decoration:none;
+
+    transition:.4s;
+}
+
+.btn:hover{
+    background:#d4af37;
+    transform:translateY(-3px);
+}
+
+/* TITLES */
+
+.section-title{
+    text-align:center;
+    color:#d4af37;
+    font-size:3rem;
+    margin-bottom:50px;
+}
+
+/* COUNTDOWN */
+
+.countdown{
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    flex-wrap:wrap;
+}
+
+.box{
+    background:rgba(255,255,255,.18);
+
+    backdrop-filter:blur(20px);
+    -webkit-backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,.3);
+
+    width:180px;
+    padding:30px;
+
+    text-align:center;
+
+    border-radius:20px;
+
+    box-shadow:
+    0 8px 32px rgba(0,0,0,.15),
+    inset 0 0 1px rgba(255,255,255,.8);
+
+    transition:.4s;
+}
+
+.box:hover{
+    transform:translateY(-8px);
+
+    box-shadow:
+    0 15px 35px rgba(212,175,55,.25);
+}
+
+.box span{
+    display:block;
+    font-size:3rem;
+    font-weight:bold;
+    color:#d4af37;
+}
+
+/* TIMELINE */
+
+.timeline{
+    max-width:850px;
+    margin:auto;
+}
+
+.timeline-item{
+    background:white;
+
+    padding:30px;
+    margin-bottom:25px;
+
+    border-radius:20px;
+
+    box-shadow:
+    0 10px 35px rgba(0,0,0,.08);
+
+    transition:.4s;
+}
+
+.timeline-item:hover{
+    transform:translateY(-8px);
+
+    box-shadow:
+    0 20px 40px rgba(212,175,55,.18);
+}
+
+.timeline-item h3{
+    color:#d4af37;
+    margin-bottom:10px;
+}
+
+/* DETAILS */
+
+.details{
+    text-align:center;
+}
+
+.details p{
+    margin-bottom:15px;
+    font-size:1.1rem;
+}
+
+.map-btn{
+    display:inline-block;
+
+    margin-top:25px;
+
+    padding:15px 40px;
+
+    background:#d4af37;
+    color:white;
+
+    text-decoration:none;
+
+    border-radius:50px;
+
+    transition:.4s;
+}
+
+.map-btn:hover{
+    transform:translateY(-4px);
+}
+
+/* GALLERY */
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.gallery-item{
+    height:280px;
+
+    border-radius:20px;
+
+    background:#ececec;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-weight:600;
+
+    transition:.4s;
+}
+
+.gallery-item:hover{
+    transform:scale(1.03);
+}
+
+/* FOOTER */
+
+.footer{
+    background:#222;
+    color:white;
+    text-align:center;
+}
+
+.footer h2{
+    color:#d4af37;
+    margin-bottom:20px;
+}
+
+/* ANIMATION */
+
+.fade-in{
+    opacity:0;
+    transform:translateY(40px);
+
+    transition:
+    opacity 1s ease,
+    transform 1s ease;
+}
+
+.fade-in.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* PARTICLES */
+
+#particles{
+    position:fixed;
+    inset:0;
+
+    pointer-events:none;
+
+    z-index:1;
+}
+
+.particle{
+    position:absolute;
+
+    width:4px;
+    height:4px;
+
+    background:#d4af37;
+
+    border-radius:50%;
+
+    animation:float linear infinite;
+}
+
+@keyframes float{
+
+    from{
+        transform:translateY(100vh);
+        opacity:0;
+    }
+
+    20%{
+        opacity:.8;
+    }
+
+    to{
+        transform:translateY(-100px);
+        opacity:0;
+    }
+
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.hero-content h1{
+    font-size:2.5rem;
+}
+
+.hero-content h2{
+    font-size:1.5rem;
+}
+
+.section-title{
+    font-size:2.2rem;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<audio id="bgMusic" loop>
+    <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<div id="particles"></div>
+
+<section class="hero">
+
+<div class="hero-content">
+
+<h1>Yousif Yaser</h1>
+
+<h2>&</h2>
+
+<h1>Mallk Torky</h1>
+
+<p>
+Together with our families,
+we invite you to celebrate our wedding.
+</p>
+
+<div class="hero-date">
+06 • 06 • 2026
+</div>
+
+<a href="#details" class="btn" id="startExperience">
+View Details
+</a>
+
+</div>
+
+</section>
+
+<section class="fade-in">
+
+<h2 class="section-title">
+Countdown To Our Special Day
+</h2>
+
+<div class="countdown">
+
+<div class="box">
+<span id="days">0</span>
+Days
+</div>
+
+<div class="box">
+<span id="hours">0</span>
+Hours
+</div>
+
+<div class="box">
+<span id="minutes">0</span>
+Minutes
+</div>
+
+<div class="box">
+<span id="seconds">0</span>
+Seconds
+</div>
+
+</div>
+
+</section>
+
+<section class="fade-in">
+
+<h2 class="section-title">
+Our Journey
+</h2>
+
+<div class="timeline">
+
+<div class="timeline-item">
+<h3>♡ First Meeting</h3>
+<p>The beginning of our story.</p>
+</div>
+
+<div class="timeline-item">
+<h3>♡ Engagement</h3>
+<p>A promise for forever.</p>
+</div>
+
+<div class="timeline-item">
+<h3>♡ Wedding Day</h3>
+<p>The start of a new chapter.</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="fade-in" id="details">
+
+<h2 class="section-title">
+Wedding Ceremony
+</h2>
+
+<div class="details">
+
+<p><strong>Date:</strong> June 6, 2026</p>
+
+<p><strong>Time:</strong> 8:00 PM</p>
+
+<p><strong>Venue:</strong> ORO Plaza</p>
+
+<p><strong>Dress Code:</strong> As You Wish</p>
+
+<a class="map-btn"
+href="https://maps.app.goo.gl/WXbQBCekKtmBcKnT7"
+target="_blank">
+View Location </a>
+
+</div>
+
+</section>
+
+<section class="fade-in">
+
+<h2 class="section-title">
+Photo Gallery
+</h2>
+
+<div class="gallery">
+
+<div class="gallery-item">Photo 1</div>
+<div class="gallery-item">Photo 2</div>
+<div class="gallery-item">Photo 3</div>
+<div class="gallery-item">Photo 4</div>
+<div class="gallery-item">Photo 5</div>
+<div class="gallery-item">Photo 6</div>
+
+</div>
+
+</section>
+
+<section class="footer fade-in">
+
+<h2>
+We Are Excited To Celebrate This Special Day With You
+</h2>
+
+<p>
+and create unforgettable memories together.
+</p>
+
+<br><br>
+
+<h3>
+With Love,
+<br><br>
+Yousif & Mallk
+</h3>
+
+</section>
+
+<script>
+
+/* COUNTDOWN */
+
+const weddingDate =
+new Date("June 6, 2026 20:00:00").getTime();
+
+setInterval(() => {
+
+const now = new Date().getTime();
+
+const distance = weddingDate - now;
+
+document.getElementById("days").innerHTML =
+Math.floor(distance/(1000*60*60*24));
+
+document.getElementById("hours").innerHTML =
+Math.floor((distance%(1000*60*60*24))/(1000*60*60));
+
+document.getElementById("minutes").innerHTML =
+Math.floor((distance%(1000*60*60))/(1000*60));
+
+document.getElementById("seconds").innerHTML =
+Math.floor((distance%(1000*60))/1000);
+
+},1000);
+
+/* FADE IN */
+
+const observer = new IntersectionObserver(entries => {
+
+entries.forEach(entry => {
+
+if(entry.isIntersecting){
+entry.target.classList.add("show");
+}
+
+});
+
+});
+
+document.querySelectorAll(".fade-in").forEach(section => {
+observer.observe(section);
+});
+
+/* MUSIC */
+
+document.getElementById("startExperience")
+.addEventListener("click", () => {
+
+const music =
+document.getElementById("bgMusic");
+
+music.play();
+
+});
+
+/* GOLD PARTICLES */
+
+for(let i=0;i<40;i++){
+
+const particle =
+document.createElement("div");
+
+particle.classList.add("particle");
+
+particle.style.left =
+Math.random()*100 + "%";
+
+particle.style.animationDelay =
+Math.random()*8 + "s";
+
+particle.style.animationDuration =
+(6 + Math.random()*8) + "s";
+
+document.getElementById("particles")
+.appendChild(particle);
+
+}
+
+</script>
+
+</body>
+</html>
